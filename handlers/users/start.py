@@ -10,6 +10,6 @@ async def bot_start(message: types.Message):
     a = KeyboardButton("Telefon raqamizni ulashing",request_contact=True)
     btn.add(a)
     await message.answer(f"Assalomu alaykum, {message.from_user.full_name}!",reply_markup=btn)
-@dp.message_handler(types.ContentTypes.CONTACT)
+@dp.message_handler(content_types='contact')
 async def contact(message:types.Message):
     await message.answer("Kontakt qabul qilindi!")
